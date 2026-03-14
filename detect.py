@@ -4,7 +4,19 @@ from datetime import datetime
 
 # ── CONFIG ───────────────────────────────────────────────
 # Person 2 will fill FILTER_CLASSES later e.g. ["person","car"]
-FILTER_CLASSES = []
+print("\n--- Object Detection Filter ---")
+print("Available classes: person, car, chair, laptop, bottle, dog, cat, bus, phone, bicycle")
+print("Type the objects you want to detect separated by commas.")
+print("Or just press Enter to detect everything.\n")
+
+user_input = input("What do you want to detect? ").strip()
+
+if user_input == "":
+    FILTER_CLASSES = []
+    print("No filter set — detecting all objects.\n")
+else:
+    FILTER_CLASSES = [c.strip().lower() for c in user_input.split(",")]
+    print(f"Filter set — detecting only: {FILTER_CLASSES}\n")
 LOG_FILE = "detections.txt"
 
 # ── MODEL LOAD ───────────────────────────────────────────
