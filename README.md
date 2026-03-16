@@ -19,6 +19,7 @@ built with YOLOv8, OpenCV, and Streamlit.
 - OpenCV
 - Streamlit
 
+
 ## Setup
 
 Clone the repo
